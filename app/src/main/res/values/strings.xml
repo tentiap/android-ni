@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Nutech Wallet</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="transfer">Transfer</string>
+    <string name="topup">Top Up</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logout">Logout</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="id_transaksi">ID Transaksi</string>
+    <string name="amount">Amount</string>
 </resources>

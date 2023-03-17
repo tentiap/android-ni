@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment">
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F9FAFB"
+                android:paddingBottom="16dp">
+
+
+                <TextView
+                    android:id="@+id/tv_yours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="36dp"
+                    android:text="Your balance"
+                    android:textColor="#A6AAB4"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Rp0"
+                    android:textColor="#171D33"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/tv_yours"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_yours" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_home"
+                    android:layout_width="441dp"
+                    android:layout_height="493dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_balance"
+                    app:tabIndicatorColor="#FF7D00"
+                    app:tabIndicatorHeight="2dp"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="@color/black"
+                    app:tabTextColor="#A6AAB4">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/layout_transaction"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal"
+                            android:paddingLeft="3dp"
+                            android:paddingRight="3dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:letterSpacing="0.02"
+                                android:text="Your Transactions"
+                                android:textColor="#516b9e"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgview_start"
+                            android:layout_width="241dp"
+                            android:layout_height="296dp"
+                            android:layout_gravity="center"
+                            android:textColor="#A6AAB4"
+                            android:textSize="16sp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/illustration_wallet" />
+
+                        <TextView
+                            android:id="@+id/tv_callToAction"
+                            android:layout_width="254dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:letterSpacing="0.02"
+                            android:maxLines="2"
+                            android:text="Let's start your first transaction!"
+                            android:textAlignment="center"
+                            android:textColor="#516b9e"
+                            android:textSize="25sp"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:paddingLeft="3dp"
+                            android:paddingRight="3dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/rl_history_home">
+
+                                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                                    android:id="@+id/swipe_refresh_home"
+                                    android:layout_width="365dp"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rv_history_home"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        tools:listitem="@layout/item_cardview_history" />
+
+                                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+                                <ProgressBar
+                                    android:id="@+id/progress_bar_home"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
